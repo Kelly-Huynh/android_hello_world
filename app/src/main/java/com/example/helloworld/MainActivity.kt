@@ -24,12 +24,8 @@ class MainActivity : ComponentActivity() {
             HelloWorldTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme. colorScheme.background
-                    ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    color = MaterialTheme. colorScheme.background
+                    ) {
                 }
             }
         }
@@ -37,22 +33,19 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Surface(color = Color.Cyan) {
-        Text(
-            text = "Hi, my name is $name!",
-            modifier = modifier.padding(24.dp)
-        )
-    }
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text =  message
+    )
 }
 
 @Preview(
     showBackground = true,
-    showSystemUi = true,
+//    showSystemUi = true,
     name = "My Preview")
 @Composable
-fun GreetingPreview() {
+fun BirthdayCardPreview() {
     HelloWorldTheme {
-        Greeting("Kelly")
+        GreetingText(message = "Happy Birthday Alice!")
     }
 }
